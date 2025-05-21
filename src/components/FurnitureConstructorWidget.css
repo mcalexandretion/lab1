@@ -1,0 +1,8 @@
+.widget{
+display: 'flex';
+flex-wrap: 'wrap';
+    gap: '20px';
+    padding: '20px';
+    border: '1px solid #ddd';
+    border-radius: '8px' 
+}

@@ -30,9 +30,7 @@ const FurnitureConstructorPage = ({ id, source }: Props) => {
   if (!model) return <div>Загрузка модели...</div>;
 
   return (
-    <div>
-      <h2>Конструктор мебели</h2>
-      <p>Тип: {model.type}</p>
+    <div className='container_main'>
       <FurnitureConstructorWidget model={model} />
     </div>
   );

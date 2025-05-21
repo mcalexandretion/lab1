@@ -36,16 +36,16 @@ const ConstructedModelsPage = () => {
       {models.length === 0 ? (
         <p>Модели пока не добавлены.</p>
       ) : (
-        <ul style={{ listStyle: 'none', padding: 0 }}>
+        <ul style={{ listStyle: 'none' }}>
           {models.map((model) => (
-            <li key={`${model.id}-${model.name}`} style={{ marginBottom: 10 }}>
+            <li key={`${model.id}-${model.name}`} className='card'>
               <div>
                 <strong>{model.name}</strong> — {model.color}, {model.size}
               </div>
-              <Link to={`/constructed/${model.id}/constructor`} style={{ marginRight: 10 }}>
+              <Link to={`/constructed/${model.id}/constructor`} >
                 Открыть в конструкторе
               </Link>
-              <button onClick={() => handleDelete(model.id)} style={{ color: 'red' }}>
+              <button onClick={() => handleDelete(model.id)}>
                 Удалить
               </button>
             </li>

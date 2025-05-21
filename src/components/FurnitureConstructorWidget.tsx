@@ -23,7 +23,7 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
     if (model.shelves && model.shelves.length > 0) {
       setShelves(model.shelves);
     } else if (model.type === 'шкаф') {
-      setShelves([50, 100, 150]);
+      setShelves([]);
     }
   }, [model]);
 
@@ -36,7 +36,9 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
     try {
       const savedModel = await saveConstructedModel({
         ...custom,
-        shelves: custom.type === 'шкаф' ? shelves : undefined
+        shelves: custom.type === 'шкаф' ? shelves : undefined,
+        name: `Модель: ${custom.type}`,
+        images: []
       });
       alert('Модель сохранена!');
       if (setModel) setModel(savedModel);
@@ -48,7 +50,7 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
   };
 
   const addShelf = () => {
-    const newPosition = shelves.length > 0 ? Math.min(shelves[shelves.length - 1] + 30, dimensions.height - 20) : 30;
+    const newPosition = shelves.length > 0 ? Math.min(shelves[shelves.length - 1] + 30, dimensions.height - 10) : 30;
     setShelves([...shelves, newPosition]);
   };
 
@@ -61,7 +63,7 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
   const updateShelfPosition = (index: number, position: number) => {
     const newShelves = [...shelves];
     const minPos = index > 0 ? newShelves[index - 1] + 10 : 10;
-    const maxPos = index < shelves.length - 1 ? newShelves[index + 1] - 10 : dimensions.height - 20;
+    const maxPos = index < shelves.length - 1 ? newShelves[index + 1] - 10 : dimensions.height - 10;
     newShelves[index] = Math.max(minPos, Math.min(position, maxPos));
     setShelves(newShelves);
   };
@@ -98,35 +100,36 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
   };
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
-      <div style={{ flex: 1, minWidth: '300px' }}>
-        <h3>Конструктор мебели: {custom.type}</h3>
-
-        <div style={{ marginBottom: '15px' }}>
-          <label>Цвет:</label>
+    <div className='container'>
+      
+      <div className='card_info'>
+        
+        
+          <h3>Конструктор мебели: {custom.type}</h3>
+          <div className='row_info'>  <label>Цвет:</label>
           <select value={custom.color} onChange={e => setCustom({ ...custom, color: e.target.value })}>
             {colors.colors.map(color => (<option key={color} value={color}>{color}</option>))}
           </select>
-        </div>
-
-        <div style={{ marginBottom: '15px' }}>
+          </div>
+         
+        <div className='row_info'>
           <label>Материал:</label>
           <select value={custom.material} onChange={e => setCustom({ ...custom, material: e.target.value })}>
             {materials.materials.map(material => (<option key={material} value={material}>{material}</option>))}
           </select>
         </div>
 
-        <div style={{ marginBottom: '15px' }}>
+        <div className='row_info'>
           <label>Ширина (см):</label>
           <input type="number" value={dimensions.width} onChange={e => setDimensions({ ...dimensions, width: +e.target.value })} min="30" max="300" />
         </div>
 
-        <div style={{ marginBottom: '15px' }}>
+        <div className='row_info'>
           <label>Глубина (см):</label>
           <input type="number" value={dimensions.depth} onChange={e => setDimensions({ ...dimensions, depth: +e.target.value })} min="30" max="200" />
         </div>
 
-        <div style={{ marginBottom: '15px' }}>
+        <div className='row_info'>
           <label>Высота (см):</label>
           <input type="number" value={dimensions.height} onChange={e => {
             const newHeight = +e.target.value;
@@ -138,11 +141,14 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
         </div>
 
         {custom.type === 'шкаф' && (
-          <div style={{ margin: '20px 0', padding: '15px', border: '1px solid #eee', borderRadius: '5px' }}>
-            <h4>Управление полками</h4>
-            <button onClick={addShelf}>Добавить полку</button>
+          <div className="card_info">
+            <div className="row_info">   
+               <h3>Управление полками</h3>
+               <button onClick={addShelf}>Добавить полку</button> 
+            </div>
+        
             {shelves.map((position, index) => (
-              <div key={index} style={{ display: 'flex', alignItems: 'center', margin: '10px 0' }}>
+              <div key={index} className='row_slider'>
                 <span style={{ width: '80px' }}>Полка {index + 1}:</span>
                 <input type="range" min="10" max={dimensions.height - 10} value={position} onChange={e => updateShelfPosition(index, +e.target.value)} style={{ flex: 1, margin: '0 10px' }} />
                 <span style={{ width: '50px' }}>{position} см</span>
@@ -155,11 +161,11 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
         <button onClick={handleSave} disabled={isSaving}>{isSaving ? 'Сохранение...' : 'Сохранить модель'}</button>
       </div>
 
-      <div style={{ flex: 1, minWidth: '300px' }}>
+      <div className='card_info'>
         <h3>Предпросмотр</h3>
         {custom.type === 'шкаф' ? renderWardrobePreview() : renderBasicPreview()}
 
-        <div style={{ marginTop: '20px' }}>
+        <div className="info">
           <h4>Параметры:</h4>
           <p>Тип: {custom.type}</p>
           <p>Цвет: {custom.color}</p>

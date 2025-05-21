@@ -2,6 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import type { Furniture } from '../types/furniture';
 import { fetchFurnitureById } from '../services/api';
+import Gallery from '../components/Gallery'; // путь может отличаться
+
 
 const FurnitureDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,16 +22,19 @@ const FurnitureDetailPage = () => {
   return (
     <div style={{ padding: 20 }}>
       <h2>{furniture.name}</h2>
+      <Link to={`/furniture/${furniture.id}/constructor`}>
+        <button style={{ marginTop: 20 }}>Открыть в конструкторе</button>
+      </Link>
       <p>Цвет: {furniture.color}</p>
       <p>Размер: {furniture.size}</p>
       <p>Тип: {furniture.type}</p>
       <p>Материал: {furniture.material}</p>
 
-      <Link to={`/furniture/${furniture.id}/constructor`}>
-        <button style={{ marginTop: 20 }}>Открыть в конструкторе</button>
-      </Link>
+      
+      <Gallery images={furniture.images} />
     </div>
   );
 };
 
 export default FurnitureDetailPage;
+

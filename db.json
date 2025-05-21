@@ -9,6 +9,7 @@
       "size": "200x90x100",
       "description": "Удобный диван с мягкими подушками и устойчивыми ножками.",
       "images": [
+        "/images/sofa1.jpg",
         "/images/sofa1.jpg"
       ]
     },
@@ -181,5 +182,33 @@
       ]
     }
   ],
-  "constructorModels": []
+  "constructorModels": [
+    {
+      "id": "1",
+      "name": "Модель: диван",
+      "type": "диван",
+      "color": "Серый",
+      "material": "Ткань",
+      "size": "200x90x100",
+      "description": "Удобный диван с мягкими подушками и устойчивыми ножками.",
+      "images": [
+        "/images/sofa1.jpg"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Модель: шкаф",
+      "type": "шкаф",
+      "color": "Коричневый",
+      "material": "Дерево",
+      "size": "180x60x220",
+      "description": "Трёхстворчатый шкаф с зеркалом и полками внутри.",
+      "images": [],
+      "shelves": [
+        30,
+        100,
+        158
+      ]
+    }
+  ]
 }
