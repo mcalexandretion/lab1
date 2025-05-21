@@ -20,3 +20,13 @@ export const saveConstructedModel = (model: Furniture) =>
 
 export const deleteConstructedModel = (id: number) =>
   axios.delete(`${API_BASE}/constructorModels/${id}`);
+
+export const getFurnitureById = async (id: string) => {
+  const res = await axios.get(`http://localhost:3001/furniture/${id}`);
+  return res.data;
+};
+
+export const getConstructedModelById = async (id: string) => {
+  const res = await axios.get(`http://localhost:3001/constructorModels/${id}`);
+  return res.data;
+};

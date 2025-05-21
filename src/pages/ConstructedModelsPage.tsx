@@ -42,7 +42,7 @@ const ConstructedModelsPage = () => {
               <div>
                 <strong>{model.name}</strong> — {model.color}, {model.size}
               </div>
-              <Link to={`/furniture/${model.id}/constructor`} style={{ marginRight: 10 }}>
+              <Link to={`/constructed/${model.id}/constructor`} style={{ marginRight: 10 }}>
                 Открыть в конструкторе
               </Link>
               <button onClick={() => handleDelete(model.id)} style={{ color: 'red' }}>
