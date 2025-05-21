@@ -32,6 +32,7 @@ const FurnitureConstructorPage = ({ id, source }: Props) => {
   return (
     <div>
       <h2>Конструктор мебели</h2>
+      <p>Тип: {model.type}</p>
       <FurnitureConstructorWidget model={model} />
     </div>
   );

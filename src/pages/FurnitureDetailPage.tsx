@@ -22,6 +22,9 @@ const FurnitureDetailPage = () => {
       <h2>{furniture.name}</h2>
       <p>Цвет: {furniture.color}</p>
       <p>Размер: {furniture.size}</p>
+      <p>Тип: {furniture.type}</p>
+      <p>Материал: {furniture.material}</p>
+
       <Link to={`/furniture/${furniture.id}/constructor`}>
         <button style={{ marginTop: 20 }}>Открыть в конструкторе</button>
       </Link>
