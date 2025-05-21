@@ -29,6 +29,7 @@ const CatalogPage = () => {
             <FurnitureCard key={item.id} item={item} />
           ))}
         </div>
+        
       )}
     </div>
   );
