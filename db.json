@@ -109,6 +109,61 @@
       "images": [
         "/images/wardrobe4.jpg"
       ]
+    },
+     {
+      "id": "11",
+      "name": "Кресло Ортопедик",
+      "type": "кресло",
+      "color": "черный",
+      "size": "70x70x120",
+      "description": "Эргономичное кресло с поддержкой поясницы",
+      "images": [
+        "/images/armchair1.jpg"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Кровать Королевская",
+      "type": "кровать",
+      "color": "белый",
+      "size": "180x200",
+      "description": "Роскошная двуспальная кровать с мягким изголовьем",
+      "images": [
+        "/images/bed1.jpg"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Стул Престиж",
+      "type": "стул",
+      "color": "коричневый",
+      "size": "45x45x95",
+      "description": "Комфортный обеденный стул с мягким сиденьем",
+      "images": [
+        "/images/chair1.jpg"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Кресло-качалка",
+      "type": "кресло",
+      "color": "натуральное дерево",
+      "size": "80x90x110",
+      "description": "Уютное кресло-качалка для отдыха",
+      "images": [
+        "/images/rocking_chair.jpg"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Детская кровать Радуга",
+      "type": "кровать",
+      "color": "разноцветный",
+      "size": "90x190",
+      "description": "Яркая детская кровать с бортиками",
+      "images": [
+        "/images/kids_bed.jpg"
+      ]
     }
   ],
   "constructorModels": [
