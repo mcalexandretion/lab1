@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import type { Furniture } from '../types/furniture';
-import { saveConstructedModel } from '../services/api';
+import { saveConstructedModel } from '../services/modelService';
 
 interface Props {
   model: Furniture;
-  setModel?: (model: Furniture) => void; // опционально для обновления модели наверх
+  setModel?: (model: Furniture) => void;
 }
 
 const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
   const [custom, setCustom] = useState({ ...model });
   const [isSaving, setIsSaving] = useState(false);
 
-  // Синхронизируем локальный стейт с внешним model, если он поменялся
   useEffect(() => {
     setCustom({ ...model });
   }, [model]);
@@ -19,18 +18,11 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
   const handleSave = async () => {
     setIsSaving(true);
     try {
-      // Если у тебя логика проверки на дубликаты реализована на сервере,
-      // и сервер возвращает ошибку или статус, то можно обработать здесь
-      await saveConstructedModel(custom);
+      const savedModel = await saveConstructedModel(custom);
       alert('Модель сохранена!');
-      if (setModel) setModel(custom);
+      if (setModel) setModel(savedModel);
     } catch (error: any) {
-      // Если сервер отдает ошибку про дубликат — можно уточнить по коду ошибки
-      if (error.response && error.response.status === 409) {
-        alert('Такая модель уже существует!');
-      } else {
-        alert('Ошибка при сохранении');
-      }
+      alert(error.message);
     } finally {
       setIsSaving(false);
     }
