@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Furniture } from '../types/furniture';
-
+import '../components/FurnitureFilter.css'
 interface Props {
   allItems: Furniture[];
   onFilter: (data: Furniture[]) => void;
@@ -31,8 +31,8 @@ const FurnitureFilter = ({ allItems, onFilter }: Props) => {
   };
 
   return (
-    <div style={{ marginBottom: 20 }}>
-      <select value={type} onChange={e => setType(e.target.value)} style={{ marginRight: 10 }}>
+    <div className='row_container'>
+      <select value={type} onChange={e => setType(e.target.value)} >
         <option value="">Все типы</option>
         <option value="стол">Столы</option>
         <option value="диван">Диваны</option>
@@ -45,7 +45,7 @@ const FurnitureFilter = ({ allItems, onFilter }: Props) => {
       <select 
         value={color} 
         onChange={e => setColor(e.target.value)}
-        style={{ marginRight: 10 }}
+        
       >
         <option value="">Все цвета</option>
         {uniqueColors.map(color => (
@@ -57,10 +57,9 @@ const FurnitureFilter = ({ allItems, onFilter }: Props) => {
         placeholder="Размер (часть)" 
         value={size} 
         onChange={e => setSize(e.target.value)}
-        style={{ marginRight: 10 }}
       />
-
-      <button onClick={handleFilter} style={{ marginRight: 10 }}>Применить фильтры</button>
+    
+      <button onClick={handleFilter}>Применить фильтры</button>
       <button onClick={handleReset}>Сбросить фильтры</button>
     </div>
   );

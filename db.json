@@ -197,5 +197,16 @@
       ]
     }
   ],
-  "constructorModels": []
+  "constructorModels": [
+    {
+      "id": "1",
+      "name": "Модель: диван",
+      "type": "диван",
+      "color": "Серый",
+      "material": "Ткань",
+      "size": "200x90x100",
+      "description": "Удобный диван с мягкими подушками и устойчивыми ножками.",
+      "images": []
+    }
+  ]
 }

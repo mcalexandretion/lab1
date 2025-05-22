@@ -141,7 +141,7 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
         </div>
 
         {custom.type === 'шкаф' && (
-          <div className="card_info">
+          <div >
             <div className="row_info">   
                <h3>Управление полками</h3>
                <button onClick={addShelf}>Добавить полку</button> 

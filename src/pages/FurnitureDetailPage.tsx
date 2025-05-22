@@ -20,10 +20,10 @@ const FurnitureDetailPage = () => {
   if (!furniture) return <div>Загрузка...</div>;
 
   return (
-    <div style={{ padding: 20 }}>
+    <div>
       <h2>{furniture.name}</h2>
       <Link to={`/furniture/${furniture.id}/constructor`}>
-        <button style={{ marginTop: 20 }}>Открыть в конструкторе</button>
+        <button>Открыть в конструкторе</button>
       </Link>
       <p>Цвет: {furniture.color}</p>
       <p>Размер: {furniture.size}</p>

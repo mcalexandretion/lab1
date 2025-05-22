@@ -20,7 +20,7 @@ const CatalogPage = () => {
   }, []);
 
   return (
-    <div style={{ padding: 20 }}>
+    <div>
       <h1>Каталог мебели</h1>
       <FurnitureFilter allItems={allItems} onFilter={setItems} />
       {loading ? <p>Загрузка...</p> : (
