@@ -42,10 +42,10 @@ const FurnitureFilter = ({ allItems, onFilter }: Props) => {
         <option value="стул">Стулья</option>
       </select>
 
-      <select 
-        value={color} 
+      <select
+        value={color}
         onChange={e => setColor(e.target.value)}
-        
+
       >
         <option value="">Все цвета</option>
         {uniqueColors.map(color => (
@@ -53,12 +53,12 @@ const FurnitureFilter = ({ allItems, onFilter }: Props) => {
         ))}
       </select>
 
-      <input 
-        placeholder="Размер (часть)" 
-        value={size} 
+      <input
+        placeholder="Размер (часть)"
+        value={size}
         onChange={e => setSize(e.target.value)}
       />
-    
+
       <button onClick={handleFilter}>Применить фильтры</button>
       <button onClick={handleReset}>Сбросить фильтры</button>
     </div>

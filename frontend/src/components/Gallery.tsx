@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface Props {
   images: string[];
@@ -21,7 +21,7 @@ const Gallery = ({ images }: Props) => {
       <img
         src={images[currentIndex]}
         alt={`img-${currentIndex}`}
-        
+
       />
       <button onClick={nextImage}>→</button>
     </div>

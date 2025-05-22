@@ -101,17 +101,17 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
 
   return (
     <div className='container'>
-      
+
       <div className='card_info'>
-        
-        
-          <h3>Конструктор мебели: {custom.type}</h3>
-          <div className='row_info'>  <label>Цвет:</label>
+
+
+        <h3>Конструктор мебели: {custom.type}</h3>
+        <div className='row_info'>  <label>Цвет:</label>
           <select value={custom.color} onChange={e => setCustom({ ...custom, color: e.target.value })}>
             {colors.colors.map(color => (<option key={color} value={color}>{color}</option>))}
           </select>
-          </div>
-         
+        </div>
+
         <div className='row_info'>
           <label>Материал:</label>
           <select value={custom.material} onChange={e => setCustom({ ...custom, material: e.target.value })}>
@@ -141,12 +141,12 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
         </div>
 
         {custom.type === 'шкаф' && (
-          <div >
-            <div className="row_info">   
-               <h3>Управление полками</h3>
-               <button onClick={addShelf}>Добавить полку</button> 
+          <div className="card_info">
+            <div className="row_info">
+              <h3>Управление полками</h3>
+              <button onClick={addShelf}>Добавить полку</button>
             </div>
-        
+
             {shelves.map((position, index) => (
               <div key={index} className='row_slider'>
                 <span style={{ width: '80px' }}>Полка {index + 1}:</span>

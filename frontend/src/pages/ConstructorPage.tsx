@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import FurnitureConstructorWidget from '../components/FurnitureConstructorWidget';
 import type { Furniture } from '../types/furniture';
-import { saveConstructedModel } from '../services/modelService';
 
 const ConstructorPage: React.FC = () => {
 
@@ -25,7 +24,7 @@ const ConstructorPage: React.FC = () => {
         size: '100x60x75',
         description: '',
         images: [],
-        shelves: newType === 'шкаф' ? [] : undefined, 
+        shelves: newType === 'шкаф' ? [] : undefined,
       });
 
     } else {
@@ -33,7 +32,7 @@ const ConstructorPage: React.FC = () => {
     }
   };
 
-  
+
   const handleReset = () => {
     setType('');
     setModel(null);
@@ -58,12 +57,12 @@ const ConstructorPage: React.FC = () => {
         <>
           <FurnitureConstructorWidget model={model} setModel={setModel} />
 
-          
-            <button onClick={handleReset}>
-              Сбросить
-            </button>
-           
-          
+
+          <button onClick={handleReset}>
+            Сбросить
+          </button>
+
+
         </>
       )}
     </div>
