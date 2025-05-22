@@ -29,9 +29,9 @@ const FurnitureDetailPage = () => {
       <p>Размер: {furniture.size}</p>
       <p>Тип: {furniture.type}</p>
       <p>Материал: {furniture.material}</p>
-
+<p>Описание: {furniture.description}</p>
       
-      <Gallery images={furniture.images} />
+      <Gallery images={furniture.images}/>
     </div>
   );
 };

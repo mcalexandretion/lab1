@@ -7,17 +7,20 @@ interface Props {
 
 const FurnitureCard = ({ item }: Props) => (
   <div className="card">
+    <div className="card_container"> 
+    <img src={item.images[0]} alt={item.name} />
+<div className="info"> 
     <h3 >
       {item.name}
     </h3>
-    <img src={item.images[0]} alt={item.name} />
-<div className="info"> 
+    
     <p>Тип: {item.type}</p>
-    <p>Цвет: {item.color}</p>
-    <p>Материал: {item.material}</p>
+    {/* <p>Цвет: {item.color}</p>
+    <p>Материал: {item.material}</p> */}
     <p>Размер: {item.size}</p>
-</div>
     <Link to={`/furniture/${item.id}`}>Подробнее</Link>
+</div>
+    </div>
   </div>
 );
 

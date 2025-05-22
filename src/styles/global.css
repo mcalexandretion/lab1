@@ -142,3 +142,20 @@ input {
 ul {
     padding-left: 0.5em;
 }
+.Gallery {
+    display: flex;
+    text-align: center;
+
+}
+.Gallery img{
+max-width: 500px;
+max-height: 500px;
+}
+.card_container{
+    display: flex;
+    padding: 1%;
+    
+}
+.card_container .info{
+    margin: 1%;
+}

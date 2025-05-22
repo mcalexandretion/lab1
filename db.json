@@ -10,7 +10,8 @@
       "description": "Удобный диван с мягкими подушками и устойчивыми ножками.",
       "images": [
         "/images/sofa1.jpg",
-        "/images/sofa1.jpg"
+        "/images/sofa1_2.jpg",
+        "/images/sofa1_3.jpg"
       ]
     },
     {
@@ -22,7 +23,8 @@
       "size": "120x60x75",
       "description": "Минималистичный стол с выдвижным ящиком и устойчивой конструкцией.",
       "images": [
-        "/images/table1.jpg"
+        "/images/table1.jpg",
+        "/images/table1_2.jpg"
       ]
     },
     {
@@ -46,7 +48,10 @@
       "size": "210x100x85",
       "description": "Диван-кровать с механизмом трансформации и отделением для белья.",
       "images": [
-        "/images/sofa2.jpg"
+        "/images/sofa2.jpg",
+        "/images/sofa2_2.jpg",
+        "/images/sofa2_3.jpg",
+        "/images/sofa2_4.jpg"
       ]
     },
     {
@@ -58,7 +63,9 @@
       "size": "160x45x200",
       "description": "Современный шкаф с раздвижными дверями и большим зеркалом.",
       "images": [
-        "/images/wardrobe2.jpg"
+        "/images/wardrobe2.jpg",
+        "/images/wardrobe2_2.jpg",
+        "/images/wardrobe2_3.jpg"
       ]
     },
     {
@@ -82,7 +89,8 @@
       "size": "100x30x200",
       "description": "Классический книжный шкаф с открытыми полками.",
       "images": [
-        "/images/wardrobe3.jpg"
+        "/images/wardrobe3.jpg",
+        "/images/wardrobe3_1.jpg"
       ]
     },
     {
@@ -94,6 +102,8 @@
       "size": "160x80x90",
       "description": "Компактный диван для небольших помещений.",
       "images": [
+        "/images/sofa3_2.jpg",
+        "/images/sofa3_1.jpg",
         "/images/sofa3.jpg"
       ]
     },
@@ -123,14 +133,16 @@
     },
     {
       "id": "11",
-      "name": "Кресло Ортопедик",
+      "name": "Кресло Офисное",
       "type": "кресло",
       "color": "Черный",
       "material": "Кожа",
       "size": "70x70x120",
       "description": "Эргономичное кресло с поддержкой поясницы",
       "images": [
-        "/images/armchair1.jpg"
+        "/images/armchair1.jpg",
+        "/images/armchair1_2.jpg",
+        "/images/armchair1_3.jpg"
       ]
     },
     {
@@ -142,7 +154,9 @@
       "size": "180x200",
       "description": "Роскошная двуспальная кровать с мягким изголовьем",
       "images": [
-        "/images/bed1.jpg"
+        "/images/bed1.jpg",
+        "/images/bed1_2.jpg",
+        "/images/bed1_3.jpg"
       ]
     },
     {
@@ -154,7 +168,8 @@
       "size": "45x45x95",
       "description": "Комфортный обеденный стул с мягким сиденьем",
       "images": [
-        "/images/chair1.jpg"
+        "/images/chair1.jpg",
+        "/images/chair1_1.jpg"
       ]
     },
     {
@@ -182,33 +197,5 @@
       ]
     }
   ],
-  "constructorModels": [
-    {
-      "id": "1",
-      "name": "Модель: диван",
-      "type": "диван",
-      "color": "Серый",
-      "material": "Ткань",
-      "size": "200x90x100",
-      "description": "Удобный диван с мягкими подушками и устойчивыми ножками.",
-      "images": [
-        "/images/sofa1.jpg"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Модель: шкаф",
-      "type": "шкаф",
-      "color": "Коричневый",
-      "material": "Дерево",
-      "size": "180x60x220",
-      "description": "Трёхстворчатый шкаф с зеркалом и полками внутри.",
-      "images": [],
-      "shelves": [
-        30,
-        100,
-        158
-      ]
-    }
-  ]
+  "constructorModels": []
 }
