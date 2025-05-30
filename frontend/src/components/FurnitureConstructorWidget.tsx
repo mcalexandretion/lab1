@@ -83,8 +83,8 @@ const FurnitureConstructorWidget = ({ model, setModel }: Props) => {
     const label = custom.type.charAt(0).toUpperCase() + custom.type.slice(1);
     return (
       <div style={{
-        width: `${Math.min(dimensions.width, 200)}px`,
-        height: `${Math.min(dimensions.height, 200)}px`,
+        width: `${Math.min(dimensions.width, 300)}px`,
+        height: `${Math.min(dimensions.height, 300)}px`,
         backgroundColor: '#eee',
         border: '1px solid #000',
         margin: '20px auto',

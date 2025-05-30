@@ -16,11 +16,11 @@ export const isDuplicateModel = (model: Furniture, allModels: Furniture[]): bool
     m.name === model.name &&
     m.type === model.type &&
     m.color === model.color &&
-    m.material === model.material && // Учитываем материал
+    m.material === model.material && 
     m.size === model.size &&
     m.description === model.description &&
     JSON.stringify(m.images) === JSON.stringify(model.images) &&
-    JSON.stringify(m.shelves) === JSON.stringify(model.shelves) // Учитываем полки
+    JSON.stringify(m.shelves) === JSON.stringify(model.shelves) 
   );
 };
 

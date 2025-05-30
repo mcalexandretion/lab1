@@ -21,7 +21,6 @@ const ConstructedModelsPage = () => {
       deleteConstructedModel(id)
         .then(() => {
           alert('Модель успешно удалена');
-          // Обновляем список моделей после удаления
           loadModels();
         })
         .catch(() => {
